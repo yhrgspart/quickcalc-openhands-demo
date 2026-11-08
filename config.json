@@ -1,0 +1,9 @@
+{
+  "repos": [
+    "yhrgspart/quickcalc-openhands-demo"
+  ],
+  "trigger_label": "openhands",
+  "branch_prefix": "openhands/issue",
+  "pull_request_mode": "draft",
+  "github_token_secret": "GITHUB_PERSONAL_ACCESS_TOKEN"
+}
