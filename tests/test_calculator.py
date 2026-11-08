@@ -28,6 +28,10 @@ def test_divide_by_zero():
         calculate(10, 0, "divide")
 
 
+def test_power():
+    assert calculate(2, 10, "power") == 1024
+
+
 def test_unknown_operation():
     with pytest.raises(ValueError):
-        calculate(1, 2, "power")
+        calculate(1, 2, "unknown")
