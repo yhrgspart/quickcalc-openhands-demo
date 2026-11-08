@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>QuickCalc</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="bg"><span class="blob b1"></span><span class="blob b2"></span><span class="blob b3"></span></div>
+
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo">Q</div>
+      <div>
+        <div class="brand-name">QuickCalc</div>
+        <div class="brand-sub">Precision calculator</div>
+      </div>
+    </div>
+    <div class="badge"><span class="dot"></span> v1.0 · Live</div>
+  </header>
+
+  <main class="layout">
+    <section class="calc glass" aria-label="Calculator">
+      <div class="display">
+        <div id="expr" class="expr">&nbsp;</div>
+        <div id="out" class="out" aria-live="polite">0</div>
+      </div>
+
+      <div class="keys">
+        <button type="button" class="key fn" data-action="clear">AC</button>
+        <button type="button" class="key fn" data-action="sign">±</button>
+        <button type="button" class="key fn" data-action="back">⌫</button>
+        <button type="button" class="key op" data-op="divide">÷</button>
+
+        <button type="button" class="key" data-num="7">7</button>
+        <button type="button" class="key" data-num="8">8</button>
+        <button type="button" class="key" data-num="9">9</button>
+        <button type="button" class="key op" data-op="multiply">×</button>
+
+        <button type="button" class="key" data-num="4">4</button>
+        <button type="button" class="key" data-num="5">5</button>
+        <button type="button" class="key" data-num="6">6</button>
+        <button type="button" class="key op" data-op="subtract">−</button>
+
+        <button type="button" class="key" data-num="1">1</button>
+        <button type="button" class="key" data-num="2">2</button>
+        <button type="button" class="key" data-num="3">3</button>
+        <button type="button" class="key op" data-op="add">+</button>
+
+        <button type="button" class="key wide" data-num="0">0</button>
+        <button type="button" class="key" data-num=".">.</button>
+        <button type="button" class="key eq" data-action="equals">=</button>
+      </div>
+    </section>
+
+    <aside class="side">
+      <section class="glass panel">
+        <div class="panel-head">
+          <h2>History</h2>
+          <button type="button" id="clearHistory" class="link">Clear</button>
+        </div>
+        <ul id="history" class="history">
+          <li class="empty">No calculations yet</li>
+        </ul>
+      </section>
+
+      <section class="glass panel stats">
+        <div class="stat"><div class="stat-num" id="statCount">0</div><div class="stat-label">Calculations</div></div>
+        <div class="stat"><div class="stat-num" id="statMs">–</div><div class="stat-label">Last response</div></div>
+      </section>
+    </aside>
+  </main>
+
+  <footer class="foot">Keyboard: 0–9 · + − * / · Enter · Backspace · Esc</footer>
+
+  <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
