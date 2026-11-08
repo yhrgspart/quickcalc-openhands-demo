@@ -75,6 +75,7 @@
     if (a === "clear") Object.assign(state, { current: "0", first: null, op: null, fresh: false });
     if (a === "sign" && state.current !== "0") state.current = state.current.startsWith("-") ? state.current.slice(1) : "-" + state.current;
     if (a === "back" && !state.fresh) state.current = state.current.length > 1 && state.current !== "-0" ? state.current.slice(0, -1) : "0";
+    if (a === "percent" && state.current !== "0") state.current = String(parseFloat(state.current) / 100);
     if (state.current === "-") state.current = "0";
     if (a === "equals") return equals();
     render();
