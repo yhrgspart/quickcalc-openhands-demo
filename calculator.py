@@ -1,6 +1,6 @@
 """Core calculator logic for QuickCalc."""
 
-OPERATIONS = ("add", "subtract", "multiply", "divide")
+OPERATIONS = ("add", "subtract", "multiply", "divide", "power")
 
 
 def calculate(a: float, b: float, op: str) -> float:
@@ -14,4 +14,6 @@ def calculate(a: float, b: float, op: str) -> float:
         if b == 0:
             raise ValueError("Cannot divide by zero")
         return a / b
+    if op == "power":
+        return a**b
     raise ValueError(f"Unknown operation: {op}")
