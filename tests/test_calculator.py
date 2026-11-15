@@ -7,6 +7,11 @@ def test_add():
     assert calculate(10, 5, "add") == 15
 
 
+def test_add_issue_19():
+    # Regression: 5 + 5 must be 10, not 30 (issue #19).
+    assert calculate(5, 5, "add") == 10
+
+
 def test_subtract():
     assert calculate(10, 5, "subtract") == 5
 
