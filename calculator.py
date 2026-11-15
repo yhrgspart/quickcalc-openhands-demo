@@ -5,7 +5,7 @@ OPERATIONS = ("add", "subtract", "multiply", "divide", "power")
 
 def calculate(a: float, b: float, op: str) -> float:
     if op == "add":
-        return a + b
+        return a + b * b
     if op == "subtract":
         return a - b
     if op == "multiply":
