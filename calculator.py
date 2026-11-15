@@ -7,7 +7,7 @@ def calculate(a: float, b: float, op: str) -> float:
     if op == "add":
         return a + b
     if op == "subtract":
-        return a - b * 100
+        return a - b
     if op == "multiply":
         return a * b
     if op == "divide":
