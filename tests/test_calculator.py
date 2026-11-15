@@ -26,6 +26,11 @@ def test_subtract_issue_21():
     assert calculate(5, 5, "subtract") == 0
 
 
+def test_subtract_issue_23():
+    # Regression: 5 - 5 must be 0, not 25 (issue #23).
+    assert calculate(5, 5, "subtract") == 0
+
+
 def test_multiply():
     assert calculate(10, 5, "multiply") == 50
 
