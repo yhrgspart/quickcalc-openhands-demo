@@ -39,6 +39,11 @@ def test_multiply_by_zero():
     assert calculate(7, 0, "multiply") == 0
 
 
+def test_multiply_issue_25():
+    # Regression: 5 * 5 must be 25, not 10 (issue #25).
+    assert calculate(5, 5, "multiply") == 25
+
+
 def test_divide():
     assert calculate(10, 5, "divide") == 2
 
