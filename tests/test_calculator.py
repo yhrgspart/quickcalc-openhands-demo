@@ -11,6 +11,11 @@ def test_subtract():
     assert calculate(10, 5, "subtract") == 5
 
 
+def test_subtract_issue_17():
+    # Regression: 2 - 2 must be 0, not 4 (issue #17).
+    assert calculate(2, 2, "subtract") == 0
+
+
 def test_multiply():
     assert calculate(10, 5, "multiply") == 50
 
